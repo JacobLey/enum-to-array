@@ -1,0 +1,10 @@
+/*.log*
+**/.DS_Store
+
+/node_modules/**
+
+/.nyc-cache/**
+/.nyc_output/**
+/coverage/**
+/dist/**
+/nyc/**

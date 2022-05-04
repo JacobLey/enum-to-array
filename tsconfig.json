@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "composite": true,
+        "declaration": true,
+        "declarationMap": false,
+        "exactOptionalPropertyTypes": true,
+        "forceConsistentCasingInFileNames": true,
+        "importsNotUsedAsValues": "remove",
+        "incremental": true,
+        "isolatedModules": false,
+        "lib": [
+            "DOM",
+            "ESNext"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "newLine": "lf",
+        "noImplicitReturns": true,
+        "noImplicitOverride": true,
+        "noEmitOnError": true,
+        "noFallthroughCasesInSwitch": true,
+        "noPropertyAccessFromIndexSignature": false,
+        "noStrictGenericChecks": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "outDir": "dist",
+        "pretty": true,
+        "preserveConstEnums": false,
+        "removeComments": false,
+        "resolveJsonModule": true,
+        "rootDir": "src",
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "ESNext",
+        "tsBuildInfoFile": "dist/.tsbuildinfo",
+        "useDefineForClassFields": true,
+        "useUnknownInCatchVariables": true
+    },
+    "exclude": [
+        "coverage/**",
+        "dist/**",
+        "nyc/**"
+    ]
+}

@@ -1,0 +1,33 @@
+name: Publish Tag
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  publish-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }} >> ~/.npmrc
+
+      - run: |
+          curl -o package.tgz $(npm view enum-to-array@0.0.0-${{ github.sha }} dist.tarball)
+          tar -xf package.tgz
+
+      - run: |
+          cd ./package
+          npm version --git-tag-version=false ${{ github.ref_name }}
+
+      - run: |
+          npm publish ./package --tag=ignore
+          npm dist-tag rm enum-to-array ignore
+
+      - run: |
+          if [ -z $(npm view enum-to-array@'>${{ github.ref_name }}' version) ]
+            then
+              npm dist-tag add enum-to-array@${{ github.ref_name }} latest
+          fi
